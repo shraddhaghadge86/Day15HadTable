@@ -42,13 +42,13 @@ public class HashTable<K, V> {
         MyLinkedList<K, V> myLinkedList = myBucketArray.get(index);
         if (myLinkedList == null) {
             myLinkedList = new MyLinkedList<>();
-            myBucketArray.add(index, myLinkedList);
-            myLinkedList.append(word, frequency);
-        } else {
+            myBucketArray.add(index,myLinkedList);
+            myLinkedList.append(word,frequency);
+        }else{
             MyNode<K, V> myNode = myLinkedList.search(word);
-            if (myNode == null) {
-                myLinkedList.append(word, frequency);
-            } else {
+            if(myNode == null){
+                myLinkedList.append(word,frequency);
+            }else{
                 myNode.value = frequency;
             }
         }
